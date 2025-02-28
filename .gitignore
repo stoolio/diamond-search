@@ -1,0 +1,7 @@
+node_modules/
+public/labinventory.json
+public/inventory.json
+public/*.json
+public/shapes/*
+build/static/media/*
+build/shapes/*
