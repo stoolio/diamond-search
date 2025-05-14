@@ -202,7 +202,7 @@ ul#shape-selector {
   z-index: 100;
 }
 
-.modal {
+.diamond-modal {
   position: relative;
   top: 10%;
   width: 70%;
@@ -217,7 +217,7 @@ ul#shape-selector {
   transition: all 0.25s ease-in;
 }
 
-.modal.active {
+.diamond-modal.active {
   opacity: 1;
 }
 

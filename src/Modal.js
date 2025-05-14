@@ -5,12 +5,12 @@ export default function Modal({ showModal, setShowModal, ModalContent }) {
   useEffect(() => {
     setTimeout(() => {
       document
-        .querySelector(".modal-container .modal")
+        .querySelector(".modal-container .diamond-modal")
         ?.classList.add("active");
     }, 100);
     return () => {
       document
-        .querySelector(".modal-container .modal")
+        .querySelector(".modal-container .diamond-modal")
         ?.classList.remove("active");
     };
   });
