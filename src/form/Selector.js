@@ -24,7 +24,7 @@ export default function Selector(props) {
           className={`${data.includes(d) ? "active" : "no"}`}
           onClick={() => toggleData(d)}
         >
-          <img src={`shapes/${d.toLowerCase().replace(" ", "-")}.jpg`}></img>
+          <img src={`https://store-f4fje68lyd.mybigcommerce.com/content/shapes/${d.toLowerCase().replace(" ", "-")}.jpg`}></img>
           <span>{d}</span>
         </li>
       ))}

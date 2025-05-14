@@ -5,3 +5,4 @@ public/*.json
 public/shapes/*
 build/static/media/*
 build/shapes/*
+build/*.json

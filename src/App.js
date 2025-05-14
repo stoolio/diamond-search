@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import "nouislider/distribute/nouislider.css";
 import "./styles.css";
+import "nouislider/distribute/nouislider.css";
+
 
 import {
   getCoreRowModel,
@@ -117,7 +118,7 @@ export default function App() {
   ]);
 
   useEffect(() => {
-    fetch("./content/inventory.json")
+    fetch(document.querySelector('#inventory-link').textContent)
       .then((resp) => {
         if (!resp.ok) throw new Error(`Error: ${response.status}`);
         return resp.json();
