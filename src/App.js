@@ -118,7 +118,7 @@ export default function App() {
   ]);
 
   useEffect(() => {
-    fetch(document.querySelector('#inventory-link').textContent)
+    fetch(window.document.querySelector('#inventory-link').textContent)
       .then((resp) => {
         if (!resp.ok) throw new Error(`Error: ${response.status}`);
         return resp.json();
