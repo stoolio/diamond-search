@@ -203,7 +203,7 @@ export default function App() {
   });
 
   return (
-    <div className="App">
+    <div id="diamond-search" className="App">
       <Selector
         id="shape-selector"
         data={shapes}
