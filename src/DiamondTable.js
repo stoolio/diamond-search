@@ -1,6 +1,16 @@
 import { motion, AnimatePresence } from "motion/react";
 import { flexRender } from "@tanstack/react-table";
 
+function DiamondTablePaginationPageList(count, current) {
+  let out_arr = [];
+  for (var i = 1; i <= count; i++) {
+    out_arr.push(
+      <option>{i}</option>
+    )
+  }
+  return out_arr;
+}
+
 function DiamondTablePagination({ table }) {
   return (
     <div className="pagination">
@@ -12,7 +22,12 @@ function DiamondTablePagination({ table }) {
         Prev Page
       </button>
       <span>
-        Page {table.getState().pagination.pageIndex + 1} of{" "}
+        Page <select
+        value={table.getState().pagination.pageIndex+1}
+        onChange={e => table.setPageIndex(e.target.value-1)}
+      >
+        {DiamondTablePaginationPageList(table.getPageCount(), table.getState().pagination.pageIndex + 1)}
+      </select> of{" "}
         {table.getPageCount()}
       </span>
       <button
@@ -22,16 +37,19 @@ function DiamondTablePagination({ table }) {
       >
         Next Page
       </button>
-      <select
-        value={table.getState().pagination.pageSize}
-        onChange={(e) => table.setPageSize(e.target.value)}
-      >
-        {[10, 20, 30, 40, 50].map((i) => (
-          <option key={i} value={i}>
-            {i}
-          </option>
-        ))}
-      </select>
+      <div>
+        <span>Diamonds Per Page</span><br />
+        <select
+          value={table.getState().pagination.pageSize}
+          onChange={(e) => table.setPageSize(e.target.value)}
+        >
+          {[10, 20, 30, 40, 50].map((i) => (
+            <option key={i} value={i}>
+              {i}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 }
