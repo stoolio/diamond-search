@@ -22,7 +22,9 @@ table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid darkslategrey;
+  border-width: 2px;
+  border-style: solid;
+  border-color: darkslategrey;
   border-radius: 10px;
   z-index: 200;
 }
@@ -36,10 +38,12 @@ thead th:last-child {
 }
 
 thead th,
-tbody td {
-  border: 3px solid gray;
-  border-right-width: 1px;
-  border-left-width: 1px;
+tbody tr {
+  border-width: 3px;
+  border-style: solid;
+  border-color: gray;
+/*  border-right-width: 1px;*/
+/*  border-left-width: 1px;*/
 }
 
 tbody tr:nth-child(odd) {
@@ -205,7 +209,8 @@ ul#shape-selector {
 .diamond-modal {
   position: relative;
   top: 10%;
-  width: 70%;
+  width: 50%;
+  min-width: 300px;
   height: 70%;
   background-color: white;
   margin: auto;
@@ -219,6 +224,11 @@ ul#shape-selector {
 
 .diamond-modal.active {
   opacity: 1;
+}
+
+.diamond-info {
+  display: flex;
+  flex-flow: column;
 }
 
 .close-modal {
@@ -252,12 +262,40 @@ ul#shape-selector {
 
 .diamond-video {
   display: block;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   /* height: 435px; */
   margin: auto;
   border: none;
   /* overflow: hidden; */
   /* scrollbar-width: none; */
+  flex-grow: 2;
+}
+
+.diamond-text-info {
+/*  flex-grow: 1;*/
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+
+@media all and (max-width: 450px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+@media all and (max-height: 650px) {
+  .diamond-info {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .diamond-modal {
+    width: 90%;
+  }
+  .diamond-video {
+    height: 320px;
+  }
 }
 
 /* Diamond Loader Start */

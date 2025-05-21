@@ -30,35 +30,35 @@ export default function DiamondModal(diamond, getData) {
   const cert = allData["Cert #"];
   const videoUrl = allData["Video"];
   return () => (
-    <div>
+    <div className="diamond-info">
+      <div className="diamond-text-info">
       <h3>
         Stock #{sku} /{" "}
         {available === "Available" ? "Available for viewing" : "Pending Sale"}
       </h3>
-      <div className="diamond-info">
-        <ul>
-          {displayFields.map((header) => (
-            <li key={header}>
-              <b>{header}</b>
-              <br />
-              {header === "Price" ? "$" + allData[header] : allData[header]}
-            </li>
-          ))}
-        </ul>
-        {lab === "IGI" ? (
-          <a
-            style={{ textAlign: "center", display: "block", margin: "auto" }}
-            href={`https://www.igi.org/verify-your-report/?r=${cert}`}
-            target="_blank"
-          >
-            View Certificate
-          </a>
-        ) : (
-          <span>Not Certified</span>
-        )}
-        <IFrameLoader className="diamond-video" src={videoUrl} />
-        <br />
+      <ul>
+        {displayFields.map((header) => (
+          <li key={header}>
+            <b>{header}</b>
+            <br />
+            {header === "Price" ? "$" + allData[header] : allData[header]}
+          </li>
+        ))}
+      </ul>
+      {lab === "IGI" ? (
+        <a
+          style={{ textAlign: "center", display: "block" }}
+          href={`https://www.igi.org/verify-your-report/?r=${cert}`}
+          target="_blank"
+        >
+          View Certificate
+        </a>
+      ) : (
+        <span>Not Certified</span>
+      )}
       </div>
+      <IFrameLoader className="diamond-video" src={videoUrl} />
+      <br />
     </div>
   );
 }

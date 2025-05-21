@@ -5,18 +5,18 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
+    "@fontsource/montserrat": "5.1.1",
+    "@tanstack/react-table": "",
+    "motion": "^12.12.1",
+    "nouislider-react": "3.4.2",
     "react": "19.0.0",
     "react-dom": "^19.0.0",
-    "react-scripts": "^5.0.0",
-    "@tanstack/react-table": "",
-    "nouislider-react": "3.4.2",
-    "@fontsource/montserrat": "5.1.1"
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "19.0.0",
     "@types/react-dom": "19.0.0",
-    "loader-utils": "3.2.1",
-    "typescript": "5.7.2"
+    "loader-utils": "3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

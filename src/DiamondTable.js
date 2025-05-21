@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "motion/react";
 import { flexRender } from "@tanstack/react-table";
 
 function DiamondTablePagination({ table }) {
@@ -87,13 +88,19 @@ export default function DiamondTable({ table, sorting }) {
         </thead>
         <tbody>
           {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
+            <motion.tr layout
+              key={row.id}
+              initial={{ opacity: 0, borderStyle: "dashed" }}
+              animate={{ opacity: 1, borderStyle: "solid" }}
+              transition={{ duration: 0.5 }}
+              >
               {row.getVisibleCells().map((cell) => (
                 <td key={cell.id}>
                   {flexRender(cell.column.columnDef.cell, cell.getContext())}
                 </td>
               ))}
-            </tr>
+            </motion.tr>
+            
           ))}
         </tbody>
         <tfoot>
