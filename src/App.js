@@ -135,7 +135,7 @@ export default function App() {
     {
       header: "Shape",
       accessorKey: "Shape",
-      filterFn: "arrIncludesSome",
+      filterFn: "arrIncludes",
       sortingFn: "text",
     },
     {
@@ -238,7 +238,6 @@ export default function App() {
       ) : (
         <DiamondTable table={table} sorting={sorting} />
       )}
-      <button onClick={() => setShowModal(true)}>show modal</button>
       <Modal
         showModal={showModal}
         setShowModal={setShowModal}

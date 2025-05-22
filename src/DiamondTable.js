@@ -19,25 +19,26 @@ function DiamondTablePagination({ table }) {
         onClick={() => table.previousPage()}
         disabled={!table.getCanPreviousPage()}
       >
-        Prev Page
+        {"<"} Prev Page
       </button>
-      <span>
-        Page <select
-        value={table.getState().pagination.pageIndex+1}
-        onChange={e => table.setPageIndex(e.target.value-1)}
-      >
-        {DiamondTablePaginationPageList(table.getPageCount(), table.getState().pagination.pageIndex + 1)}
-      </select> of{" "}
-        {table.getPageCount()}
-      </span>
+      <div className="page-number-display">
+        <span>Page </span>
+        <select
+          value={table.getState().pagination.pageIndex+1}
+          onChange={e => table.setPageIndex(e.target.value-1)}
+        >
+          {DiamondTablePaginationPageList(table.getPageCount(), table.getState().pagination.pageIndex + 1)}
+        </select>
+        <span> of{" "}{table.getPageCount()}</span>
+      </div>
       <button
         onClick={() => table.nextPage()}
         className="border p-2"
         disabled={!table.getCanNextPage()}
       >
-        Next Page
+        Next Page {">"}
       </button>
-      <div>
+      <div className="page-count">
         <span>Diamonds Per Page</span><br />
         <select
           value={table.getState().pagination.pageSize}

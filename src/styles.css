@@ -63,11 +63,36 @@ td {
   margin-top: 5px;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.pagination button {
+  background-color: #f0f0f0;
+  height: 50px;
+  border: 2px solid gray;
+  border-style: groove;
+  border-radius: 10px;
+}
+
+.pagination .page-number-display {
+  display: flex;
+  flex-flow: row nowrap;
   justify-content: space-around;
+  align-items: center;
+  flex-basis: 150px;
+  margin: 0px 20px;
 }
 
 .pagination select {
-  flex-basis: 150px;
+  flex-basis: 25px;
+}
+
+.pagination .page-count {
+  margin-left: 30px;
+}
+
+.pagination .page-count select {
+  margin-top: 6px;
 }
 
 ul#shape-selector {
