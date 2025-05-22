@@ -135,7 +135,7 @@ export default function App() {
     {
       header: "Shape",
       accessorKey: "Shape",
-      filterFn: "arrIncludes",
+      filterFn: "arrIncludesSome",
       sortingFn: "text",
     },
     {
