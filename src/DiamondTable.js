@@ -5,7 +5,7 @@ function DiamondTablePaginationPageList(count, current) {
   let out_arr = [];
   for (var i = 1; i <= count; i++) {
     out_arr.push(
-      <option>{i}</option>
+      <option key={i}>{i}</option>
     )
   }
   return out_arr;

@@ -19,8 +19,8 @@ export default function Modal({ showModal, setShowModal, ModalContent }) {
     <>
       {showModal &&
         createPortal(
-          <div className="modal-container">
-            <div className="diamond-modal active">
+          <div className="modal-container" onClick={() => setShowModal(false)}>
+            <div className="diamond-modal active" onClick={e => e.stopPropagation()}>
               {!ModalContent ? <div>Sample Content</div> : <ModalContent />}
               <span className="close-modal" onClick={() => setShowModal(false)}>
                 X
